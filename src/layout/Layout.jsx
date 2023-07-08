@@ -19,9 +19,12 @@ import "swiper/css/pagination";
 import "../layout/Layout.css";
 import TemporaryDrawer from "./components/Menu";
 import MultipleSelectCheckmarks from "./components/select";
+import { Badge } from "@mui/material";
+import { useSelector } from "react-redux";
 
 const Layout = () => {
   const { t, i18n } = useTranslation();
+  const products = useSelector(({ basket }) => basket.products);
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
@@ -121,10 +124,13 @@ const Layout = () => {
             </Link>
             <Link to={"/Korzina"}>
               <div>
-                <LocalGroceryStoreIcon
-                  className="ml-1"
-                  sx={{ color: "white", fontSize: 35 }}
-                />
+                <Badge badgeContent={products.length} color="success">
+                  <LocalGroceryStoreIcon
+                    className="ml-1"
+                    sx={{ color: "white", fontSize: 35 }}
+                  />
+                </Badge>
+
                 <p className="text-gray-200">Корзина</p>
               </div>
             </Link>

@@ -19,13 +19,17 @@ import "../../App.css";
 
 import "../Home/home.css";
 import Card from "../../components/Card";
+import { useGetProductsQuery } from "../../api/products";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../reducers/basket";
 
 const Home = () => {
   const { t, i18n } = useTranslation();
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
-
+  const { data = [] } = useGetProductsQuery();
+  const dispatch = useDispatch();
   const menu = [
     {
       img: img9,
@@ -137,18 +141,30 @@ const Home = () => {
         <div className="mt-5">
           <h1 className="font-bold text-3xl">Хиты продаж</h1>
         </div>
-        <div >
+        <div>
           <div className="w-[100%] flex mt-5">
-            {menu.map((el) => {
-              return <Card  key={el.id} {...el} />;
-            })}
+            {/* {menu.map((el) => {
+              return <Card key={el.id} {...el} />;
+            })} */}
+            {data.length > 0 &&
+              data.map((el) => {
+                return (
+                  <Card
+                    key={el.id}
+                    {...el}
+                    addToBasket={() => {
+                      dispatch(addProduct(el));
+                    }}
+                  />
+                );
+              })}
           </div>
         </div>
-        <div >
+        <div>
           <div className="w-[100%] flex mt-5 pb-10">
-            {menu.map((el) => {
-              return <Card  key={el.id} {...el} />;
-            })}
+            {/* {menu.map((el) => {
+              return <Card key={el.id} />;
+            })} */}
           </div>
         </div>
       </div>
