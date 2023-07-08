@@ -1,0 +1,36 @@
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: #ffffff;
+    position: fixed;
+    padding: 12px 16px;
+    z-index: 9999;
+    width: 25%;
+    left: 25%;
+    top: 0;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content2 {
+    display: none;
+    position: fixed;
+    background-color: #ffffff;
+    position: fixed;
+    padding: 12px 16px;
+    z-index: 9999;
+    width: 25%;
+    left: 45%;
+    top: 0;
+    overflow-y: auto;
+    height: 100vh;
+    color: red;
+}
+
+.dropdown2:hover .dropdown-content2 {
+    display: block;
+}

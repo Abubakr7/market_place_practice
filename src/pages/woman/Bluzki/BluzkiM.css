@@ -1,0 +1,12 @@
+
+.imgDropdown-content{
+  display: none;
+}
+.imgDropdown:hover .imgDropdown-content{
+  display: block;
+  position: absolute;
+  top: 305px;
+  left: 10.7%;
+  width: 411px;
+  z-index: 10;
+}

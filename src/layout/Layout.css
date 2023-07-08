@@ -1,0 +1,38 @@
+.ok10{
+
+    background-image: url(../assets/project/kar.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bgheader {
+	background: linear-gradient(90deg, #ca52ee, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+	transform: translate3d(0, 0, 0);
+}
+.bg2{
+	background: linear-gradient(90deg, #ebe72d, #ce4076, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+	transform: translate3d(0, 0, 0);
+}
+.dropdown-content3 {
+    display: none;
+    position: fixed;
+    background-color: #ffffff;
+    position: fixed;
+    padding: 12px 16px;
+    z-index: 9999;
+    width: 25%;
+    left: 0%;
+    top: 5;
+    overflow-y: auto;
+    height: 100vh;
+    
+}
+
+.dropdown3:hover .dropdown-content3 {
+    display: block;
+}
+
